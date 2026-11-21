@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digital Lifeguards — Keeping kids safe online</title>
 <link rel="icon" href="dl-badge.png">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P3N8TSLW');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0FTVBDFSW1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0FTVBDFSW1');
+</script>
+<!-- End Google Analytics -->
 <style>
   :root{--bg:#070b08;--panel:#0f1712;--line:#1f3326;--green:#39d36b;--green-2:#7cf09d;--text:#eef5f0;--muted:#a3b8aa}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -52,6 +68,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3N8TSLW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="wrap">
   <nav>
@@ -128,9 +148,9 @@
     <h2>A sneak peek</h2>
     <p class="sub">What parents will see when the app launches.</p>
     <div class="gallery">
-      <figure><img src="thumb-lights-out.jpg" alt="Lights out. Screens on. Last screen time 12:43 am, way past bedtime." loading="lazy"><figcaption>Late-night screen alerts</figcaption></figure>
-      <figure><img src="thumb-stranger-alert.jpg" alt="Strangers can't hide. Someone new messaged your child, no friends in common." loading="lazy"><figcaption>Stranger alerts</figcaption></figure>
-      <figure><img src="thumb-every-screen.jpg" alt="Every screen. One app. Screen time across phone, console, TV, Chromebook and tablet." loading="lazy"><figcaption>Every screen in one app</figcaption></figure>
+      <figure><img src="thumb-lights-out.jpg" alt="Lights out. Screens on. Last screen time 12:43 am, way past bedtime."><figcaption>Late-night screen alerts</figcaption></figure>
+      <figure><img src="thumb-stranger-alert.jpg" alt="Strangers can't hide. Someone new messaged your child, no friends in common."><figcaption>Stranger alerts</figcaption></figure>
+      <figure><img src="thumb-every-screen.jpg" alt="Every screen. One app. Screen time across phone, console, TV, Chromebook and tablet."><figcaption>Every screen in one app</figcaption></figure>
     </div>
   </section>
 
@@ -152,6 +172,14 @@
     box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
       '?rel=0&playsinline=1" title="Digital Lifeguards in 30 seconds" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
   }
+  // Send waitlist button clicks to Google Analytics as a "join_waitlist" event
+  document.querySelectorAll('a[href*="forms.gle"]').forEach(function (a, i) {
+    a.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'join_waitlist', { button_position: ['nav', 'hero', 'footer_cta'][i] || 'other' });
+      }
+    });
+  });
 }
 </script>
 
